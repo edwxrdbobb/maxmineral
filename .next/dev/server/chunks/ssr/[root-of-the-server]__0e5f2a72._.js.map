@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 28, "column": 0}, "map": {"version":3,"sources":["file:///Users/student/Documents/WAV/mpm/app/ClientLayout.tsx"],"sourcesContent":["\"use client\"\n\nimport type React from \"react\"\nimport { Analytics } from \"@vercel/analytics/next\"\nimport { AnimatePresence } from \"framer-motion\" // Added Framer Motion import\n\nexport default function ClientLayout({\n  children,\n}: Readonly<{\n  children: React.ReactNode\n}>) {\n  return (\n    <html lang=\"en\">\n      <body className={`font-sans antialiased`}>\n        <AnimatePresence>{children}</AnimatePresence> {/* Wrapped children with AnimatePresence for animations */}\n        <Analytics />\n      </body>\n    </html>\n  )\n}\n"],"names":[],"mappings":";;;;;AAGA;AACA,qUAAgD,6BAA6B;AAJ7E;;;;AAMe,SAAS,aAAa,EACnC,QAAQ,EAGR;IACA,qBACE,8OAAC;QAAK,MAAK;kBACT,cAAA,8OAAC;YAAK,WAAW,CAAC,qBAAqB,CAAC;;8BACtC,8OAAC,4MAAe;8BAAE;;;;;;gBAA2B;8BAC7C,8OAAC,4KAAS;;;;;;;;;;;;;;;;AAIlB"}}]
+}
