@@ -6,9 +6,12 @@ import PageHero from "@/components/page-hero"
 import Footer from "@/components/footer"
 import Newsletter from "@/components/newsletter"
 import { useState } from "react"
+import Image from "next/image"
+import { X } from "lucide-react"
 
 export default function FleetPage() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
+  const [selectedEquipment, setSelectedEquipment] = useState<(typeof equipmentCategories)[number] | null>(null)
 
   const equipmentCategories = [
     {
@@ -91,6 +94,7 @@ export default function FleetPage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: idx * 0.05 }}
+                onClick={() => setSelectedEquipment(equipment)}
                 className="relative group overflow-hidden rounded-2xl h-64 cursor-pointer shadow-lg hover:shadow-yellow-500/25 border border-yellow-400/20 bg-slate-900/60"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-slate-900/70 to-black/70 group-hover:via-slate-900/40 transition duration-300" />
@@ -156,6 +160,56 @@ export default function FleetPage() {
       </section>
 
       <Newsletter />
+      {selectedEquipment && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center px-4"
+          onClick={() => setSelectedEquipment(null)}
+        >
+          <motion.div
+            initial={{ scale: 0.95, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.95, opacity: 0 }}
+            onClick={(e) => e.stopPropagation()}
+            className="relative max-w-4xl w-full bg-slate-950 border border-yellow-400/30 rounded-2xl overflow-hidden shadow-2xl shadow-yellow-500/20"
+          >
+            <button
+              onClick={() => setSelectedEquipment(null)}
+              className="absolute top-3 right-3 p-2 rounded-full bg-black/60 border border-yellow-400/40 text-yellow-200 hover:bg-yellow-500/20 transition"
+            >
+              <X className="w-5 h-5" />
+            </button>
+            <div className="relative h-72">
+              <Image
+                src={selectedEquipment.image}
+                alt={selectedEquipment.title}
+                fill
+                sizes="100vw"
+                className="object-cover"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+            </div>
+            <div className="p-6 space-y-3">
+              <p className="text-xs uppercase tracking-[0.2em] text-yellow-300">Fleet Category</p>
+              <h3 className="text-2xl font-bold text-white">{selectedEquipment.title}</h3>
+              <p className="text-slate-300">{selectedEquipment.description}</p>
+              <div className="grid sm:grid-cols-2 gap-3 text-sm text-slate-300">
+                <div className="border border-yellow-400/20 rounded-lg p-3 bg-slate-900/60">
+                  <p className="text-yellow-300 font-semibold mb-1">Capabilities</p>
+                  <p>Operator supplied, haul/lowboy transport arranged, daily PM service included.</p>
+                </div>
+                <div className="border border-yellow-400/20 rounded-lg p-3 bg-slate-900/60">
+                  <p className="text-yellow-300 font-semibold mb-1">Applications</p>
+                  <p>Mining, construction, heavy lift support, and earthworks.</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
       <Footer />
     </main>
   )

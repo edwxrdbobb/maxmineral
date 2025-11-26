@@ -52,3 +52,7 @@ https://react.dev/link/hydration-mismatch
 [00:04:08.053] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/about color: rgb(120, 120, 120) color: inherit {"dp":"/about","o":"http://localhost:3000/about","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764182175681}
 [00:04:10.746] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764182178358}
 [00:07:04.635] Server  LOG      ✓ Compiled in 79ms
+[00:09:55.362] Server  LOG      ✓ Compiled in 210ms
+[00:10:09.397] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/about color: rgb(120, 120, 120) color: inherit {"dp":"/about","o":"http://localhost:3000/about","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764182537016}
+[00:10:18.935] Server  LOG      ✓ Compiled in 184ms
+[00:10:25.235] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/fleet color: rgb(120, 120, 120) color: inherit {"dp":"/fleet","o":"http://localhost:3000/fleet","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764182552866}
