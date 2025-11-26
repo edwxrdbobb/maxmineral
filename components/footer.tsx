@@ -42,9 +42,40 @@ export default function Footer() {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="bg-gradient-to-b from-slate-900 to-black text-white py-16 px-4 md:px-6 border-t border-yellow-400/20"
+      className="relative overflow-hidden bg-gradient-to-b from-slate-950 via-slate-950 to-black text-white py-16 px-4 md:px-6 border-t border-yellow-400/20"
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(234,179,8,0.12),transparent_35%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_10%,rgba(234,179,8,0.08),transparent_30%)]" />
+      </div>
+      <div className="max-w-6xl mx-auto relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          className="mb-12 rounded-2xl border border-yellow-400/30 bg-gradient-to-r from-yellow-500/10 via-yellow-500/5 to-transparent p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4 shadow-[0_25px_60px_rgba(0,0,0,0.35)]"
+        >
+          <div>
+            <p className="text-sm uppercase tracking-[0.18em] text-yellow-300 mb-2">Mobilize in hours</p>
+            <h3 className="text-2xl font-bold text-white">Ready to dispatch equipment to your site?</h3>
+            <p className="text-slate-300 text-sm mt-2">
+              Contact our control room for availability, rates, and mobilization timelines.
+            </p>
+          </div>
+          <div className="flex gap-3">
+            <Link
+              href="/contact"
+              className="px-5 py-3 rounded-lg bg-yellow-500 text-black font-semibold hover:bg-yellow-400 transition shadow-lg shadow-yellow-500/30"
+            >
+              Contact Dispatch
+            </Link>
+            <Link
+              href="/fleet"
+              className="px-5 py-3 rounded-lg border border-yellow-400/60 text-yellow-200 hover:bg-yellow-400/10 transition"
+            >
+              Browse Fleet
+            </Link>
+          </div>
+        </motion.div>
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           {/* Logo Section */}
           <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0 }}>

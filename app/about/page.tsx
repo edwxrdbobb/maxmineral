@@ -14,7 +14,7 @@ export default function AboutPage() {
       <PageHero title="About Us" breadcrumb={[{ label: "Home", href: "/" }, { label: "About Us" }]} />
 
       {/* About Content Section */}
-      <section className="py-24 px-4 md:px-6 bg-white">
+      <section className="py-24 px-4 md:px-6 bg-gradient-to-b from-slate-950 via-slate-900 to-black">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -34,10 +34,10 @@ export default function AboutPage() {
             className="grid md:grid-cols-2 gap-12 items-center"
           >
             <div>
-              <h2 className="text-5xl font-bold text-black mb-6 leading-tight">
+              <h2 className="text-5xl font-bold text-white mb-6 leading-tight">
                 15+ Years Rental Machinery Excellence
               </h2>
-              <div className="space-y-4 text-slate-700 leading-relaxed">
+              <div className="space-y-4 text-slate-300 leading-relaxed">
                 <p>
                   Max's Precious Minerals is a leading rental machinery provider with a rich history of delivering
                   premium equipment and support across diverse sectors. With over 15 years of experience in the
@@ -67,7 +67,7 @@ export default function AboutPage() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="mt-8 px-8 py-3 bg-yellow-500 text-black font-bold rounded-lg hover:bg-yellow-400 transition"
+                className="mt-8 px-8 py-3 bg-gradient-to-r from-yellow-500 via-yellow-400 to-amber-300 text-black font-bold rounded-lg hover:shadow-[0_15px_45px_rgba(234,179,8,0.35)] transition"
               >
                 Learn More
               </motion.button>
@@ -77,9 +77,13 @@ export default function AboutPage() {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6 }}
-              className="rounded-xl overflow-hidden shadow-2xl"
+              className="rounded-xl overflow-hidden shadow-2xl border border-yellow-400/20"
             >
-              <img src="/industrial-machinery-rental-equipment.jpg" alt="Max's Precious Minerals Equipment" className="w-full h-auto" />
+              <img
+                src="/industrial-machinery-rental-equipment.jpg"
+                alt="Max's Precious Minerals Equipment"
+                className="w-full h-auto"
+              />
             </motion.div>
           </motion.div>
         </div>
@@ -88,7 +92,7 @@ export default function AboutPage() {
       <StatsEnhanced />
 
       {/* FAQ Section */}
-      <section className="py-24 px-4 md:px-6 bg-white">
+      <section className="py-24 px-4 md:px-6 bg-slate-900">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -97,7 +101,7 @@ export default function AboutPage() {
             className="text-center mb-16"
           >
             <p className="text-yellow-500 text-sm font-bold uppercase tracking-wider mb-2">Frequently Asked Question</p>
-            <h2 className="text-5xl font-bold text-black">You May Ask</h2>
+            <h2 className="text-5xl font-bold text-white">You May Ask</h2>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -114,11 +118,11 @@ export default function AboutPage() {
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: idx * 0.05 }}
-                className="p-6 border-l-4 border-yellow-400 bg-yellow-50 cursor-pointer hover:shadow-lg transition"
+                className="p-6 border-l-4 border-yellow-400/70 bg-slate-950 text-white cursor-pointer hover:shadow-yellow-500/30 hover:shadow-lg transition rounded-r-lg"
               >
-                <h3 className="font-bold text-black text-lg flex justify-between items-start gap-4">
+                <h3 className="font-bold text-white text-lg flex justify-between items-start gap-4">
                   <span>{question}</span>
-                  <span className="text-yellow-500 text-2xl">+</span>
+                  <span className="text-yellow-400 text-2xl">+</span>
                 </h3>
               </motion.div>
             ))}

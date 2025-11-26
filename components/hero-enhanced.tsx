@@ -1,17 +1,40 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { useEffect, useState } from "react"
 
 export default function HeroEnhanced() {
+  const heroImages = [
+    "/fleet-images/crawler-wheel-excavators.jpg",
+    "/fleet-images/crane-and-lifter.webp",
+    "/fleet-images/dump-trucks.jpg",
+    "/fleet-images/loader-and-skid.jpg",
+  ]
+
+  const [currentImage, setCurrentImage] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % heroImages.length)
+    }, 3000)
+    return () => clearInterval(interval)
+  }, [heroImages.length])
+
   return (
     <section id="home" className="relative w-full min-h-screen pt-20 overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
-        <img
-          src="/mining-operation-sierra-leone-equipment.jpg"
-          alt="Heavy machinery on site"
-          className="w-full h-full object-cover scale-105"
-        />
+        {heroImages.map((src, idx) => (
+          <motion.div
+            key={src}
+            className="absolute inset-0"
+            initial={{ opacity: idx === 0 ? 1 : 0 }}
+            animate={{ opacity: currentImage === idx ? 1 : 0 }}
+            transition={{ duration: 1.2, ease: "easeInOut" }}
+          >
+            <img src={src} alt="Heavy machinery on site" className="w-full h-full object-cover scale-105" />
+          </motion.div>
+        ))}
         <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/70 to-black/60" />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(234,179,8,0.12),transparent_25%)]" />

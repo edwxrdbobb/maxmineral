@@ -1,7 +1,8 @@
 "use client"
 
-import { useState } from "react"
 import { motion } from "framer-motion"
+import { MapPin, Mail, Phone } from "lucide-react"
+import { useState } from "react"
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -33,7 +34,7 @@ export default function Contact() {
           >
             <div>
               <h3 className="text-lg font-bold text-yellow-400 mb-3 flex items-center gap-2">
-                <span>📍</span> Location
+                <MapPin className="w-5 h-5" /> Location
               </h3>
               <p className="text-slate-300">7 Siaka Steven Street</p>
               <p className="text-slate-300">Freetown, Sierra Leone</p>
@@ -41,7 +42,7 @@ export default function Contact() {
 
             <div>
               <h3 className="text-lg font-bold text-yellow-400 mb-3 flex items-center gap-2">
-                <span>☎️</span> Phone
+                <Phone className="w-5 h-5" /> Phone
               </h3>
               <p className="text-slate-300 font-bold">+1 (226) 353-0622</p>
               <p className="text-slate-400 text-sm">24/7 Dispatch & WhatsApp</p>
@@ -49,7 +50,7 @@ export default function Contact() {
 
             <div>
               <h3 className="text-lg font-bold text-yellow-400 mb-3 flex items-center gap-2">
-                <span>✉️</span> Email
+                <Mail className="w-5 h-5" /> Email
               </h3>
               <p className="text-slate-300 break-all">maxpreciousmineralsandecports@gmail.com</p>
             </div>

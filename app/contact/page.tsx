@@ -2,8 +2,9 @@
 
 import type React from "react"
 
-import { useState } from "react"
 import { motion } from "framer-motion"
+import { Mail, MapPin, Phone } from "lucide-react"
+import { useState } from "react"
 import HeaderEnhanced from "@/components/header-enhanced"
 import PageHero from "@/components/page-hero"
 import Footer from "@/components/footer"
@@ -30,7 +31,7 @@ export default function ContactPage() {
       <PageHero title="Contact Us" breadcrumb={[{ label: "Home", href: "/" }, { label: "Contact Us" }]} />
 
       {/* Contact Content Section */}
-      <section className="py-24 px-4 md:px-6 bg-white">
+      <section className="py-24 px-4 md:px-6 bg-gradient-to-b from-slate-950 via-slate-900 to-black">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -38,8 +39,8 @@ export default function ContactPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <p className="text-yellow-500 text-sm font-bold uppercase tracking-wider mb-2">Get In Touch</p>
-            <h2 className="text-5xl font-bold text-black">For Any Query</h2>
+            <p className="text-yellow-400 text-sm font-bold uppercase tracking-wider mb-2">Get In Touch</p>
+            <h2 className="text-5xl font-bold text-white">For Any Query</h2>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-12">
@@ -55,10 +56,10 @@ export default function ContactPage() {
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0 }}
-                className="p-6 border-l-4 border-yellow-400 bg-slate-900/50 rounded-r-lg"
+                className="p-6 border-l-4 border-yellow-400/70 bg-slate-900/60 rounded-r-lg shadow-lg shadow-black/30"
               >
                 <h3 className="text-lg font-bold text-yellow-400 mb-3 flex items-center gap-2">
-                  <span>📍</span> Location
+                  <MapPin className="w-5 h-5" /> Location
                 </h3>
                 <p className="text-slate-300 font-medium">7 Siaka Steven Street</p>
                 <p className="text-slate-300 font-medium">Freetown, Sierra Leone</p>
@@ -69,10 +70,10 @@ export default function ContactPage() {
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.1 }}
-                className="p-6 border-l-4 border-yellow-400 bg-slate-900/50 rounded-r-lg"
+                className="p-6 border-l-4 border-yellow-400/70 bg-slate-900/60 rounded-r-lg shadow-lg shadow-black/30"
               >
                 <h3 className="text-lg font-bold text-yellow-400 mb-3 flex items-center gap-2">
-                  <span>☎️</span> Phone
+                  <Phone className="w-5 h-5" /> Phone
                 </h3>
                 <p className="text-slate-300 font-bold">+1 (226) 353-0622</p>
                 <p className="text-slate-400 text-sm">24/7 Dispatch & WhatsApp</p>
@@ -83,10 +84,10 @@ export default function ContactPage() {
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.2 }}
-                className="p-6 border-l-4 border-yellow-400 bg-slate-900/50 rounded-r-lg"
+                className="p-6 border-l-4 border-yellow-400/70 bg-slate-900/60 rounded-r-lg shadow-lg shadow-black/30"
               >
                 <h3 className="text-lg font-bold text-yellow-400 mb-3 flex items-center gap-2">
-                  <span>✉️</span> Email
+                  <Mail className="w-5 h-5" /> Email
                 </h3>
                 <p className="text-slate-300 break-all font-medium">maxpreciousmineralsandecports@gmail.com</p>
               </motion.div>
@@ -98,14 +99,14 @@ export default function ContactPage() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               onSubmit={handleSubmit}
-              className="space-y-4 bg-yellow-400 p-8 rounded-lg"
+              className="space-y-4 bg-slate-900/70 p-8 rounded-2xl border border-yellow-400/25 shadow-lg shadow-black/30"
             >
               <motion.input
                 whileFocus={{ scale: 1.02 }}
                 type="text"
                 placeholder="Your Name"
                 required
-                className="w-full px-4 py-3 bg-yellow-300 border border-yellow-500 rounded-lg text-black placeholder:text-yellow-700 focus:outline-none focus:ring-2 focus:ring-black transition"
+                className="w-full px-4 py-3 bg-slate-800/60 border border-yellow-400/30 rounded-lg text-white placeholder:text-slate-500 focus:outline-none focus:border-yellow-400/70 focus:bg-slate-800/90 transition"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               />
@@ -114,7 +115,7 @@ export default function ContactPage() {
                 type="email"
                 placeholder="Your Email"
                 required
-                className="w-full px-4 py-3 bg-yellow-300 border border-yellow-500 rounded-lg text-black placeholder:text-yellow-700 focus:outline-none focus:ring-2 focus:ring-black transition"
+                className="w-full px-4 py-3 bg-slate-800/60 border border-yellow-400/30 rounded-lg text-white placeholder:text-slate-500 focus:outline-none focus:border-yellow-400/70 focus:bg-slate-800/90 transition"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               />
@@ -123,7 +124,7 @@ export default function ContactPage() {
                 type="text"
                 placeholder="Subject"
                 required
-                className="w-full px-4 py-3 bg-yellow-300 border border-yellow-500 rounded-lg text-black placeholder:text-yellow-700 focus:outline-none focus:ring-2 focus:ring-black transition"
+                className="w-full px-4 py-3 bg-slate-800/60 border border-yellow-400/30 rounded-lg text-white placeholder:text-slate-500 focus:outline-none focus:border-yellow-400/70 focus:bg-slate-800/90 transition"
                 value={formData.subject}
                 onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
               />
@@ -132,7 +133,7 @@ export default function ContactPage() {
                 placeholder="Message"
                 rows={5}
                 required
-                className="w-full px-4 py-3 bg-yellow-300 border border-yellow-500 rounded-lg text-black placeholder:text-yellow-700 focus:outline-none focus:ring-2 focus:ring-black transition resize-none"
+                className="w-full px-4 py-3 bg-slate-800/60 border border-yellow-400/30 rounded-lg text-white placeholder:text-slate-500 focus:outline-none focus:border-yellow-400/70 focus:bg-slate-800/90 transition resize-none"
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
               />
@@ -140,7 +141,7 @@ export default function ContactPage() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 type="submit"
-                className="w-full px-6 py-3 bg-black text-yellow-400 font-bold rounded-lg hover:bg-slate-900 transition uppercase tracking-wider"
+                className="w-full px-6 py-3 bg-gradient-to-r from-yellow-500 to-amber-400 text-black font-bold rounded-lg hover:shadow-[0_15px_45px_rgba(234,179,8,0.35)] transition uppercase tracking-wider"
               >
                 Send Message
               </motion.button>
