@@ -3,6 +3,7 @@ import HeroEnhanced from "@/components/hero-enhanced"
 import FeaturesHighlight from "@/components/features-highlight"
 import About from "@/components/about"
 import ServicesEnhanced from "@/components/services-enhanced"
+import MineralsSection from "@/components/minerals-section"
 import FleetSection from "@/components/fleet-section"
 import StatsEnhanced from "@/components/stats-enhanced"
 import Contact from "@/components/contact"
@@ -17,6 +18,7 @@ export default function Home() {
       <HeaderEnhanced />
       <HeroEnhanced />
       <FeaturesHighlight />
+      <MineralsSection />
       <About />
       <ServicesEnhanced />
       <FleetSection />

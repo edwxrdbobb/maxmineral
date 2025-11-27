@@ -44,6 +44,7 @@ export default function HeaderEnhanced() {
           {[
             { label: "HOME", href: "/" },
             { label: "ABOUT", href: "/about" },
+            { label: "MINERALS", href: "/minerals" },
             { label: "FLEET", href: "/fleet" },
             { label: "CONTACT", href: "/contact" },
           ].map((item) => (
@@ -100,6 +101,7 @@ export default function HeaderEnhanced() {
           {[
             { label: "HOME", href: "/" },
             { label: "ABOUT", href: "/about" },
+            { label: "MINERALS", href: "/minerals" },
             { label: "FLEET", href: "/fleet" },
             { label: "CONTACT", href: "/contact" },
           ].map((item) => (
